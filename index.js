@@ -5,17 +5,17 @@ const path = require("path");
 const argv = yargs
 	.option("rc", {
 		alias: "r",
-		description: "components klasörü altına react bileşeni oluştur",
+		description: "react component",
 		type: "string",
 	})
 	.option("rnc", {
 		alias: "n",
-		description: "components klasörü altına react native bileşeni oluştur",
+		description: "react native component",
 		type: "string",
 	})
 	.option("ss", {
 		alias: "s",
-		description: "components klasörü altına styled-system bileşeni oluştur",
+		description: "(react native) styled system component",
 		type: "string",
 	})
 	.help()
@@ -38,6 +38,7 @@ function toPascalCase(text) {
 	return text.replace(/(^\w|-\w)/g, clearAndUpper);
 }
 
+// react component
 if (argv.rc && argv.rc) {
 	createDir();
 	argv.rc.split(" ").forEach(c => {
@@ -57,6 +58,7 @@ export default ${pascal}`;
 	});
 }
 
+// react native component
 if (argv.rnc && argv.rnc) {
 	createDir();
 	argv.rnc.split(" ").forEach(c => {
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({});`;
 	});
 }
 
+// (react native) styled system component
 if (argv.ss && argv.ss) {
 	createDir();
 	argv.ss.split(" ").forEach(c => {
