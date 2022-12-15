@@ -38,64 +38,47 @@ function toPascalCase(text) {
 	return text.replace(/(^\w|-\w)/g, clearAndUpper);
 }
 
-// react component
-if (argv.rc && argv.rc) {
-	createDir();
-	argv.rc.split(" ").forEach(c => {
-		let pascal = toPascalCase(c);
-		const template = `const ${pascal} = () => {
+const optionList = ["r", "n", "s"];
+Object.keys(argv).forEach(k => {
+	if (optionList.includes(k)) {
+		createDir();
+		argv[k].split(" ").forEach(c => {
+			let pascal = toPascalCase(c);
+			let txt = codeFromTemplate(k, pascal);
+			const path = `components/${pascal}.jsx`;
+			if (!fs.existsSync(path)) {
+				fs.writeFile(path, txt, err => err && console.error(err));
+			}
+		});
+	}
+});
+
+function codeFromTemplate(type, name) {
+	if (type === "r") {
+		return `const ${name} = () => {
   return (
-    <div>${pascal}</div>
+    <div>${name}</div>
   )
 }
 
-export default ${pascal}`;
+export default ${name}`;
+	} else if (type === "n") {
+		return `import { StyleSheet, Text } from 'react-native'
 
-		const path = `components/${pascal}.jsx`;
-		if (!fs.existsSync(path)) {
-			fs.writeFile(path, template, err => err && console.error(err));
-		}
-	});
-}
-
-// react native component
-if (argv.rnc && argv.rnc) {
-	createDir();
-	argv.rnc.split(" ").forEach(c => {
-		let pascal = toPascalCase(c);
-		const template = `import { StyleSheet, Text } from 'react-native'
-
-const ${pascal} = () => {
-  return <Text>${pascal}</Text>;
+const ${name} = () => {
+  return <Text>${name}</Text>;
 };
 
-export default ${pascal};
+export default ${name};
 
 const styles = StyleSheet.create({});`;
-
-		const path = `components/${pascal}.jsx`;
-		if (!fs.existsSync(path)) {
-			fs.writeFile(path, template, err => err && console.error(err));
-		}
-	});
-}
-
-// (react native) styled system component
-if (argv.ss && argv.ss) {
-	createDir();
-	argv.ss.split(" ").forEach(c => {
-		let pascal = toPascalCase(c);
-		const template = `import { View } from "react-native";
+	} else if (type === "s") {
+		return `import { View } from "react-native";
 import styled from "styled-components";
 import { compose, color, size, space, flexbox, borderRadius } from "styled-system";
 
-const ${pascal} = styled(View)(compose(color, size, space, flexbox, borderRadius));
+const ${name} = styled(View)(compose(color, size, space, flexbox, borderRadius));
 
-export default ${pascal};`;
-
-		const path = `components/${pascal}.jsx`;
-		if (!fs.existsSync(path)) {
-			fs.writeFile(path, template, err => err && console.error(err));
-		}
-	});
+export default ${name};`;
+	}
 }
