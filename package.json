@@ -1,0 +1,29 @@
+{
+	"name": "gmtc",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"yargs": "^17.6.2"
+	},
+	"description": "give me the component",
+	"devDependencies": {},
+	"scripts": {
+		"test": "gmtc -r \"my-header my-footer\" -n \"top-nav\" -s \"box input\""
+	},
+	"bin": "./index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/brsgrlr/gmtc.git"
+	},
+	"keywords": [
+		"component",
+		"automatic",
+		"generation"
+	],
+	"author": "brsgrlr",
+	"bugs": {
+		"url": "https://github.com/brsgrlr/gmtc/issues"
+	},
+	"homepage": "https://github.com/brsgrlr/gmtc#readme"
+}
