@@ -5,7 +5,9 @@ Creates react, react native or styled-system components automatically into the c
 parameters:
 
 -r plain react component
+
 -n react native component
+
 -s react native styled system component
 
 example:
