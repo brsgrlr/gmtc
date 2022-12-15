@@ -10,7 +10,7 @@ Creates react, react native or styled-system components automatically into the c
 # example:  
 gmtc -r "my-header my-footer" -n "top-nav" -s "box input"  
 
-# creates  
+creates  
 components/MyHeader.jsx  
 components/MyFooter.jsx  
 components/TopNav.jsx  
