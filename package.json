@@ -9,7 +9,7 @@
 	"description": "give me the component",
 	"devDependencies": {},
 	"scripts": {
-		"test": "gmtc -r \"my-header my-footer\" -n \"top-nav\" -s \"box input\""
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"bin": "./index.js",
 	"repository": {
