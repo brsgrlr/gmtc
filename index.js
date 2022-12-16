@@ -45,9 +45,9 @@ Object.keys(argv).forEach(k => {
 		argv[k].split(" ").forEach(c => {
 			let pascal = toPascalCase(c);
 			let txt = codeFromTemplate(k, pascal);
-			const path = path.join(__dirname, `components/${pascal}.jsx`);
-			if (!fs.existsSync(path)) {
-				fs.writeFile(path, txt, err => err && console.error(err));
+			let filename = path.join(__dirname, `components/${pascal}.jsx`);
+			if (!fs.existsSync(filename)) {
+				fs.writeFile(filename, txt, err => err && console.error(err));
 			}
 		});
 	}
