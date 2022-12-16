@@ -24,7 +24,7 @@ const argv = yargs
 	.alias("help", "h").argv;
 
 function createDir() {
-	let dir = path.join(__dirname, "components");
+	let dir = path.join(process.cwd(), "components");
 	if (!fs.existsSync(dir)) {
 		fs.mkdir(dir, err => err && console.error(err));
 	}
@@ -45,7 +45,7 @@ Object.keys(argv).forEach(k => {
 		argv[k].split(" ").forEach(c => {
 			let pascal = toPascalCase(c);
 			let txt = codeFromTemplate(k, pascal);
-			let filename = path.join(__dirname, `components/${pascal}.jsx`);
+			let filename = path.join(process.cwd(), `components/${pascal}.jsx`);
 			if (!fs.existsSync(filename)) {
 				fs.writeFile(filename, txt, err => err && console.error(err));
 			}
