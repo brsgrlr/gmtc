@@ -8,7 +8,7 @@ Creates react, react native or styled-system components automatically into the c
 -s react native styled system component
 
 # example:  
-gmtc -r "my-header my-footer" -n "top-nav" -s "box input"  
+npx gmtc -r "my-header my-footer" -n "top-nav" -s "box input"  
 
 creates  
 components/MyHeader.jsx  
