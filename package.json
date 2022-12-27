@@ -1,29 +1,29 @@
 {
-	"name": "gmtc",
-	"version": "1.0.6",
-	"main": "index.js",
-	"license": "MIT",
-	"dependencies": {
-		"yargs": "^17.6.2"
-	},
-	"description": "give me the component",
-	"devDependencies": {},
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"bin": "./index.js",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/brsgrlr/gmtc.git"
-	},
-	"keywords": [
-		"component",
-		"automatic",
-		"generation"
-	],
-	"author": "brsgrlr",
-	"bugs": {
-		"url": "https://github.com/brsgrlr/gmtc/issues"
-	},
-	"homepage": "https://github.com/brsgrlr/gmtc#readme"
+  "name": "gmtc",
+  "version": "1.0.7",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^17.6.2"
+  },
+  "description": "give me the component",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brsgrlr/gmtc.git"
+  },
+  "keywords": [
+    "component",
+    "automatic",
+    "generation"
+  ],
+  "author": "brsgrlr",
+  "bugs": {
+    "url": "https://github.com/brsgrlr/gmtc/issues"
+  },
+  "homepage": "https://github.com/brsgrlr/gmtc#readme"
 }
